@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            left: 0;
+            top: 0;
+            background-color: #f00;
+        }
+
+        .box2{
+            left: 20px;
+            top: 20px;
+            background-color: #0f0;
+            z-index: -1;
+        }
+
+        .box3{
+            left: 40px;
+            top: 40px;
+            background-color: #00f;
+        }
+
+        .info{
+            position: absolute;
+            z-index:1 ;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        比较原则：
+        1.兄弟关系
+        z-index越大，层叠在越上面
+        z-index相等，写在后面的那个元素在上面
+        2.非兄弟关系
+        各自从元素自己以及祖先元素中，找出最邻近的2个定位元素进行比较
+        而且这2个定位元素必须设置z-index的具体数值
+     -->
+    
+    <div class="item box1">1</div>
+    <div class="container">
+        <div class="item box2">
+            <div class="info">hhh</div>
+        </div>
+        
+    </div>
+    <div class="item box3">3</div> 
+</body>
+</html>
